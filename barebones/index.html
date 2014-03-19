@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>SIP.js Barebones Demo</title>
+  </head>
+
+  <body>
+    <!-- call controls -->
+    <form action="" onsubmit="dial(); return false;">
+      <input type="text" id="target" placeholder="Enter a SIP URI" autofocus>
+      <input type="checkbox" id="video-enabled" checked> <label for="video-enabled">Use Camera?</label>
+      <input type="submit" value="Call">
+      <input type="button" value="Hang Up" onclick="hangup()">
+    </form>
+
+    <video id="remote-media"></video>
+
+    <!-- chat -->
+    <pre id="chat-log"></pre>
+    <form action="" onsubmit="sendMessage(); return false;">
+      <input type="text" id="message" placeholder="Enter a message">
+      <input type="submit" value="Send Message">
+    </form>
+
+    <!-- DTMF -->
+    <form action="" onsubmit="sendDtmf(); return false;">
+      <input type="text" id="dtmf" placeholder="Enter DTMF symbols">
+      <input type="submit" value="Send DTMF">
+    </form>
+
+    <script src="sip-0.5.0.js"></script>
+    <script src="phone.js"></script>
+  </body>
+</html>
