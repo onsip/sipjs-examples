@@ -86,14 +86,14 @@ function dial () {
   setupSession( ua.invite($('target').value, getSessionOptions()) );
 }
 
-function hangup () {
+function endSession () {
   if (session) {
     session.terminate();
   }
 }
 
 function setupSession (s) {
-  hangup();
+  endSession();
   session = s;
 
   session.on('accepted', onAccepted.bind(session));
