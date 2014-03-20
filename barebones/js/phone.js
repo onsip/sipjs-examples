@@ -19,7 +19,7 @@ requiredParams.some(function checkParam (param) {
     return false;
   }
 
-  alert('config.' + param + ' is not set! Please open phone.js and set each of the following:\n\n\t* config.' + requiredParams.join('\n\t* config.'));
+  //alert('config.' + param + ' is not set! Please open phone.js and set each of the following:\n\n\t* config.' + requiredParams.join('\n\t* config.'));
   return true;
 });
 
@@ -47,6 +47,7 @@ function receiveMessage (e) {
 
 function showMessage (from, body) {
   $('chat-log').textContent += from + ': ' + body + '\n'
+  $('log-container').scrollTop = $('log-container').scrollHeight;
 }
 
 function sendMessage () {
@@ -55,24 +56,14 @@ function sendMessage () {
   }
 
   var body = $('message').value;
+  $('message').value = '';
   ua.message($('target').value, body);
   showMessage(ua.configuration.uri.toString(), body);
 }
 
-function sendDtmf () {
-  if (!session) {
-    return;
-  }
-
-  var tones = $('dtmf').value;
-  $('dtmf').value = '';
-
-  if (/[^1234567890#*]/.test(tones)) {
-    $('dtmf').placeholder = 'only 1234567890#*';
-  }
-  else {
-    $('dtmf').placeholder = 'Enter DTMF symbols';
-    session.dtmf(tones);
+function sendDtmf (value) {
+  if (session && /[1234567890#*]/.test(value)) {
+    session.dtmf(value);
   }
 }
 

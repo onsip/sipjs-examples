@@ -1,33 +1,53 @@
 <html>
   <head>
     <title>SIP.js Barebones Demo</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
+    <h1><a href="http://www.sipjs.com" target="_blank"><img src="img/logo.png" alt="sipjs"/></a></h1>
     <!-- call controls -->
     <form action="" onsubmit="dial(); return false;">
       <input type="text" id="target" placeholder="Enter a SIP URI" autofocus>
-      <input type="checkbox" id="video-enabled" checked> <label for="video-enabled">Use Camera?</label>
-      <input type="submit" value="Call">
-      <input type="button" value="Hang Up" onclick="hangup()">
+      <label for="video-enabled">Video?</label><input type="checkbox" id="video-enabled" checked>
+      <input class="call-control" type="submit" value="Call">
+      <input id="hangup" class="call-control" type="button" value="Hang Up" onclick="hangup()">
     </form>
-
-    <video id="remote-media"></video>
-
-    <!-- chat -->
-    <pre id="chat-log"></pre>
-    <form action="" onsubmit="sendMessage(); return false;">
-      <input type="text" id="message" placeholder="Enter a message">
-      <input type="submit" value="Send Message">
-    </form>
+    
+    <p>Remote Video:</p>
+    <video id="remote-media" poster="img/logo_med.png"></video>
 
     <!-- DTMF -->
-    <form action="" onsubmit="sendDtmf(); return false;">
-      <input type="text" id="dtmf" placeholder="Enter DTMF symbols">
-      <input type="submit" value="Send DTMF">
-    </form>
+    <div id="dtmf-buttons">
+      <button onclick="sendDtmf('1');">1</button>
+      <button onclick="sendDtmf('2');">2</button>
+      <button onclick="sendDtmf('3');">3</button>
+      <button onclick="sendDtmf('4');">4</button>
+      <button onclick="sendDtmf('5');">5</button>
+      <button onclick="sendDtmf('6');">6</button>
+      <button onclick="sendDtmf('7');">7</button>
+      <button onclick="sendDtmf('8');">8</button>
+      <button onclick="sendDtmf('9');">9</button>
+      <button onclick="sendDtmf('0');">0</button>
+      <button onclick="sendDtmf('#');">#</button>
+      <button onclick="sendDtmf('*');">*</button>
+    </div>
+    
+    <!-- chat -->
+    <p>Chat:</p>
+    <div id="chat-box">
+      <div id="log-container">
+        <pre id="chat-log"></pre>
+      </div>
+      <form action="" onsubmit="sendMessage(); return false;">
+        <div id="message-input">
+          <input type="text" id="message" placeholder="Enter a message">
+          <input type="submit" id="message-submit" value="Send">
+        </div>
+      </form>
+    </div>
 
-    <script src="sip-0.5.0.js"></script>
-    <script src="phone.js"></script>
+    <script src="js/sip-0.5.0.js"></script>
+    <script src="js/phone.js"></script>
   </body>
 </html>
