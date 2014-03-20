@@ -19,7 +19,7 @@ requiredParams.some(function checkParam (param) {
     return false;
   }
 
-  //alert('config.' + param + ' is not set! Please open phone.js and set each of the following:\n\n\t* config.' + requiredParams.join('\n\t* config.'));
+  alert('config.' + param + ' is not set! Please open phone.js and set each of the following:\n\n\t* config.' + requiredParams.join('\n\t* config.'));
   return true;
 });
 
