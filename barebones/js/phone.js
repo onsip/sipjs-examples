@@ -51,13 +51,14 @@ function showMessage (from, body) {
 }
 
 function sendMessage () {
-  if (!$('target').value) {
+  var target = $('target') || (session && session.remoteIdentity.uri.toString());
+  if (!target) {
     return;
   }
 
   var body = $('message').value;
   $('message').value = '';
-  ua.message($('target').value, body);
+  ua.message(target, body);
   showMessage(ua.configuration.uri.toString(), body);
 }
 
