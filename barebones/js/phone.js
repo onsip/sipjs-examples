@@ -53,7 +53,7 @@ function showMessage (from, body) {
 }
 
 function sendMessage () {
-  var target = $('target') || (session && session.remoteIdentity.uri.toString());
+  var target = $('target').value || (session && session.remoteIdentity.uri.toString());
   if (!target) {
     return;
   }
