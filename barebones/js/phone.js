@@ -1,5 +1,7 @@
 // FILL IN THESE VALUES
+// for details, see http://sipjs.com/api/0.5.0/ua_configuration_parameters/
 var config = {
+  // EXAMPLE wsServers: "wss://my.websocketserver.com",
   wsServers: null,
   uri: null,
   authorizationUser: null,
