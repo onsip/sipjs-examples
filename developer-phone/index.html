@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>SIP.js Demo Phone</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <h1><a href="http://www.sipjs.com" target="_blank"><img src="img/logo.png" alt="sip.js"/></a></h1>
+
+    <!-- Configuration Prompt -->
+    <form id="config-form" action="">
+      <label>Your Name     <input type="text" name="displayName" /></label>
+      <label>SIP URI       <input type="text" name="uri"/></label>
+      <label>Auth Username <input type="text" name="authorizationUser" /></label>
+      <label>Password      <input type="text" name="password" /></label>
+      <label>WS Server     <input type="text" name="wsServers" /></label>
+      <input type="submit" name="configSubmit" value="Create UA" />
+    </form>
+
+    <!-- UA Control Form -->
+    <div id="ua">
+      <div id="ua-status">Disconnected</div>
+      <button id="ua-register">Register</button>
+      <form id="new-session-form" action="">
+        <label>Enable Video <input type="checkbox" id="ua-video" /></label>
+        <label>SIP URI      <input type="text" id="ua-uri" /></label>
+        <input type="submit" id="ua-invite-submit" value="Invite" />
+        <input type="submit" id="ua-message-submit" value="Begin Chat" />
+      </form>
+    </div>
+
+    <ul id="session-list"></ul>
+
+
+    <!-- Templates to clone Sessions and Messages -->
+    <ul id="templates">
+      <li id="session-template" class="template session">
+        <h2><strong class="display-name"></strong> <span class="uri"></span></h2>
+        <button class="green">Green</button>
+        <button class="red">Red</button>
+        <form class="dtmf" action="">
+          <label>DTMF <input type="text" maxlength="1" /></label>
+          <input type="submit" value="Send" />
+        </form>
+        <video autoplay>Video Disabled or Unavailable</video>
+        <ul class="messages"></ul>
+        <form class="message-form" action="">
+          <input type="text" /><input type="submit" value="Send" />
+        </form>
+      </li>
+    </ul>
+
+    <script src="js/sip-0.5.0.js"></script>
+    <script src="js/ua.js"></script>
+
+  </body>
+</html>

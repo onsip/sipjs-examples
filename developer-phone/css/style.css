@@ -1,0 +1,212 @@
+/*** COMPONENT STYLES ***/
+input[type=submit], button, button.green {
+    background-color: #35f659;
+    border: 0px;
+    height: 3em;
+    cursor: pointer;
+}
+
+button.red {
+    background-color: #ea4b35;
+}
+
+label {
+    display: block;
+    text-align: right;
+    margin: 0.5em 0;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+}
+
+/*** STRUCTURE STYLES ***/
+h1 {
+    display: block;
+    text-align: center;
+}
+
+body {
+    background: #f5f7f7;
+    font-family: sans-serif;
+}
+
+#config-form, #ua {
+    float: left;
+    width: 30%;
+    padding-right: 15%;
+    text-align: right;
+    border-radius: 1em;
+    border: 4px solid #3F4446;
+}
+
+#session-list {
+    float: left;
+    width: 45%;
+    margin: 0 0 0 4%;
+}
+
+.session {
+    clear: both;
+    display: block;
+    border: 1px solid red;
+    border-radius: 1em;
+    border: 4px solid #ea4b35;
+    text-align: center;
+}
+
+.session h2 {
+    font-weight: normal;
+}
+
+.session h2 strong {
+    font-weight: bold;
+}
+
+.session .dtmf, .session .dtmf *{
+    display: inline-block;
+}
+
+.session .dtmf input[type="text"] {
+    width: 2em;
+    text-align: center;
+}
+
+.session video {
+    display: block;
+    visibility: none;
+    height: 0;
+    max-width: 100%;
+}
+
+.session video.on {
+    visiblity: visible;
+    height: auto;
+}
+
+.session .messages {
+    max-height: 10em;
+    min-height: 2em;
+    overflow: auto;
+}
+
+.session .messages .local {
+    color: #5f7ee0;
+    clear: left;
+    float: right;
+    width: 60%;
+    text-align: right;
+    margin-right: 10%;
+}
+
+.session .messages .remote {
+    color: #00a53b;
+    clear: right;
+    float: left;
+    width: 60%;
+    text-align: left;
+    margin-left: 10%;
+}
+
+
+/*** FLOW STYLES ***/
+#ua, .started #config-form {
+    display: none;
+}
+
+#config-form, .started #ua {
+    display: block;
+}
+
+#templates {
+    display: none;
+}
+
+
+/*** Old styles ***/
+
+#target {
+  width: 25em;
+}
+
+#hangup {
+  background-color: red;
+}
+
+.call-control {
+  height: 3em;
+}
+
+#dtmf-buttons button {
+  display: inline-block;
+  margin: 1em 0 0 0;
+  height: 3.8em;
+  width: 3.8em;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 1em;
+}
+
+input {
+  border-radius: 2px;
+  border: 0px;
+  height: 3em;
+}
+
+input[type=submit] {
+  background-color: #35f659;
+  border: 0px;
+}
+
+input[type=checkbox] {
+  height: auto;
+}
+
+#chat-box {
+  position: relative;
+  border-radius: 2px;
+  border: 1px solid black;
+  width: 50em;
+  height: 40em;
+}
+
+#message-input {
+  width: 100%;
+  position: absolute;
+  bottom: 1em;
+  border-top: 1px solid black;
+  padding-top: 1em;
+}
+
+#message, #message-submit {
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+  padding: 1px 1px 1px 1px;
+}
+
+#message {
+  width: 80%;
+  margin-left: 5em;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#message-submit {
+  margin-left: -4px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#log-container {
+  height: 35em;
+  overflow: scroll;
+}
+
+#remote-media {
+  border-radius: 2px;
+  border: 1px black solid;
+}
