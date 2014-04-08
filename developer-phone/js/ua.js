@@ -282,11 +282,15 @@ function createNewSessionUI(uri, session, message) {
   }
 
   // Messages
-  if (message) {
+  function appendMessage(body, className) {
     messageNode = document.createElement('li');
-    messageNode.className = 'remote';
-    messageNode.textContent = message.body;
+    messageNode.className = className;
+    messageNode.textContent = body;
     sessionUI.messages.appendChild(messageNode);
+    sessionUI.messages.scrollTop = sessionUI.messages.scrollHeight;
+  }
+  if (message) {
+    appendMessage(message.body, 'remote');
   }
 
   ua.on('message', function (message) {
@@ -294,10 +298,7 @@ function createNewSessionUI(uri, session, message) {
       console.warn('unmatched message: ', message.remoteIdentity.uri, uri);
     }
 
-    messageNode = document.createElement('li');
-    messageNode.className = 'remote';
-    messageNode.textContent = message.body;
-    sessionUI.messages.appendChild(messageNode);
+    appendMessage(message.body, 'remote');
   });
 
   sessionUI.messageForm.addEventListener('submit', function (e) {
@@ -306,12 +307,11 @@ function createNewSessionUI(uri, session, message) {
     var body = sessionUI.messageInput.value;
     sessionUI.messageInput.value = '';
 
-    ua.message(uri, body);
+    ua.message(uri, body).on('failed', function (response, cause) {
+      appendMessage('Error sending message: ' + (cause || 'Unknown Error'), 'error');
+    });
 
-    messageNode = document.createElement('li');
-    messageNode.className = 'local';
-    messageNode.textContent = body;
-    sessionUI.messages.appendChild(messageNode);
+    appendMessage(body, 'local');
   }, false);
 
   // Add node to live session list

@@ -6,6 +6,10 @@ input[type=submit], button, button.green {
     cursor: pointer;
 }
 
+input[type=text], input[type=password] {
+    min-width: 15em;
+}
+
 button.red {
     background-color: #ea4b35;
 }
@@ -70,6 +74,7 @@ body {
 
 .session .dtmf input[type="text"] {
     width: 2em;
+    min-width: 0em;
     text-align: center;
 }
 
@@ -100,13 +105,17 @@ body {
     margin-right: 10%;
 }
 
-.session .messages .remote {
+.session .messages .remote, .session .messages .error {
     color: #00a53b;
     clear: right;
     float: left;
     width: 60%;
     text-align: left;
     margin-left: 10%;
+}
+
+.session .messages .error {
+    color: #ea4b35;
 }
 
 

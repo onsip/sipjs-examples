@@ -9,11 +9,11 @@
 
     <!-- Configuration Prompt -->
     <form id="config-form" action="">
-      <label>Your Name     <input type="text" name="displayName" /></label>
-      <label>SIP URI       <input type="text" name="uri"/></label>
-      <label>Auth Username <input type="text" name="authorizationUser" /></label>
-      <label>Password      <input type="text" name="password" /></label>
-      <label>WS Server     <input type="text" name="wsServers" /></label>
+      <label>Your Name     <input type="text" name="displayName" placeholder="John Doe"/></label>
+      <label>SIP URI       <input type="text" name="uri" placeholder="john@example.com"/></label>
+      <label>Auth Username <input type="text" name="authorizationUser" placeholder="example_john"/></label>
+      <label>Password      <input type="password" name="password" /></label>
+      <label>WS Server     <input type="text" name="wsServers" placeholder="wss://edge.sip.onsip.com"/></label>
       <input type="submit" name="configSubmit" value="Create UA" />
     </form>
 
@@ -22,8 +22,8 @@
       <div id="ua-status">Disconnected</div>
       <button id="ua-register">Register</button>
       <form id="new-session-form" action="">
-        <label>Enable Video <input type="checkbox" id="ua-video" /></label>
-        <label>SIP URI      <input type="text" id="ua-uri" /></label>
+        <label>Enable Video <input type="checkbox" id="ua-video" checked/></label>
+        <label>SIP URI      <input type="text" id="ua-uri" placeholder="will@example.com"/></label>
         <input type="submit" id="ua-invite-submit" value="Invite" />
         <input type="submit" id="ua-message-submit" value="Begin Chat" />
       </form>
@@ -45,7 +45,7 @@
         <video autoplay>Video Disabled or Unavailable</video>
         <ul class="messages"></ul>
         <form class="message-form" action="">
-          <input type="text" /><input type="submit" value="Send" />
+          <input type="text" placeholder="Type to send a message"/><input type="submit" value="Send" />
         </form>
       </li>
     </ul>
