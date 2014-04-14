@@ -1,0 +1,292 @@
+/* line 1, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html:not(.help-overlay) #help-overlay {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s ease-out;
+  transition: visibility 0s linear 0.5s, opacity 0.5s ease-out;
+}
+
+/* line 9, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html.help-overlay.help-first #help-overlay .help-first, html.help-overlay.help-second #help-overlay .help-second, html.help-overlay:not(.audio-device):not(.video-device) #help-overlay .no-devices, html.help-overlay.no-js #help-overlay .no-js, html.help-overlay.no-browser-support #help-overlay .no-browser-support, html.help-overlay.no-modern #help-overlay .no-modern, html.help-overlay.lost-local-media #help-overlay .lost-local-media, html.help-overlay.missing-params #help-overlay .missing-params, html.help-overlay.call-complete #help-overlay .call-complete, html.help-overlay.call-error #help-overlay .call-error {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+}
+
+/* line 25, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .lost-local-media ul {
+  list-style-type: none;
+}
+
+/* line 31, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html:not(.lost-local-audio) #help-overlay p span.not-lost-both,
+html:not(.lost-local-video) #help-overlay p span.not-lost-both {
+  display: inline;
+}
+/* line 34, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html:not(.lost-local-audio) #help-overlay p span.lost-both,
+html:not(.lost-local-video) #help-overlay p span.lost-both {
+  display: none;
+}
+
+/* line 37, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html:not(.lost-local-audio) #help-overlay p span.lost-local-audio,
+html:not(.lost-local-video) #help-overlay p span.lost-local-video {
+  display: none;
+}
+
+/* line 42, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html.lost-local-video.lost-local-audio #help-overlay p span.not-lost-both {
+  display: none;
+}
+/* line 45, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html.lost-local-video.lost-local-audio #help-overlay p span.lost-both {
+  display: inline;
+}
+
+/* line 48, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html:not(.lost-local-video) #help-overlay .lost-local-media li.camera {
+  background: url("../img/nodevices/okay_camera_icon.png") left center no-repeat;
+}
+/* line 50, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html:not(.lost-local-video) #help-overlay .lost-local-media li.camera .lost-local-video {
+  display: none;
+}
+/* line 52, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html:not(.lost-local-video) #help-overlay .lost-local-media li.camera .lost-local-video + span {
+  display: inline;
+}
+
+/* line 55, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html:not(.lost-local-audio) #help-overlay .lost-local-media li.microphone {
+  background: url("../img/nodevices/okay_microphone_icon.png") 4px center no-repeat;
+}
+/* line 57, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html:not(.lost-local-audio) #help-overlay .lost-local-media li.microphone .lost-local-audio {
+  display: none;
+}
+/* line 59, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html:not(.lost-local-audio) #help-overlay .lost-local-media li.microphone .lost-local-audio + span {
+  display: inline;
+}
+
+/* line 62, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html.lost-local-audio #help-overlay .lost-local-media li.microphone span:not(.lost-local-audio),
+html.lost-local-video #help-overlay .lost-local-media li.camera span:not(.lost-local-video) {
+  display: none;
+}
+
+/* line 67, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html:not(.mozilla) #help-overlay .mozilla,
+html:not(.chrome) #help-overlay .chrome,
+html:not(.mac) #help-overlay .mac,
+html:not(.win) #help-overlay .win,
+html:not(.no-js) #help-overlay p.no-js,
+html:not(.no-browser-support) #help-overlay p.no-browser-support,
+html:not(.no-modern) #help-overlay p.no-modern,
+html:not(.missing-params) #help-overlay .missing-params,
+html:not(.call-complete) #help-overlay p.call-complete,
+html:not(.call-complete) #help-overlay button.call-complete,
+html:not(.call-error) #help-overlay p.call-error,
+html.no-js .alternate-info,
+html.no-alts .alternate-info {
+  display: none;
+}
+
+/* line 82, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+.disableable {
+  position: relative;
+}
+/* line 84, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+.disableable:after {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s ease-out;
+  transition: visibility 0s linear 0.5s, opacity 0.5s ease-out;
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+/* line 95, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html.allow-media:not(.help-overlay) .disableable:after {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+}
+
+/* line 100, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html.allow-media:not(.help-overlay) #stream-allow {
+  display: inline-block;
+}
+
+/* line 103, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+html:not(.callme) #phone.disableable:after {
+  border-right: 1px solid rgba(153, 153, 153, 0.75);
+}
+
+/* line 106, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font: 14px "Helvetica Neue";
+  z-index: 99;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in;
+}
+/* line 118, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay > * {
+  width: 320px;
+  height: 100%;
+  position: fixed;
+  left: 50%;
+  margin: 0px 0 0 -160px;
+  background: rgba(20, 20, 20, 0.9);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s ease-in;
+  transition: visibility 0s linear 0.5s, opacity 0.5s ease-in;
+  text-align: center;
+}
+/* line 132, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay > *.chrome.help-first img {
+  max-height: 40px;
+}
+/* line 137, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay > *:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+/* line 145, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay a[class] {
+  line-height: 1.3em;
+  font-size: 14px;
+  letter-spacing: normal;
+  text-decoration: underline;
+}
+/* line 152, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay button {
+  top: initial;
+  left: initial;
+  right: initial;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  color: white;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 11px;
+  line-height: 1.3em;
+  letter-spacing: normal;
+  text-decoration: underline;
+}
+/* line 170, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay button.help-done {
+  bottom: 3em;
+  left: 1em;
+}
+/* line 173, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay button.help-prev, #help-overlay button.help-next, #help-overlay button.help-done.call-complete {
+  right: 11px;
+  left: initial;
+  bottom: 11px;
+}
+/* line 178, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content {
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+  /* 1.65 = (1 + 1.3 + 1) / 2, to center content in the space above the buttons */
+  font-size: 14px;
+  padding-bottom: 1.65em;
+}
+/* line 189, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content img {
+  margin-left: 130px;
+}
+/* line 192, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content p {
+  width: 280px;
+  color: white;
+}
+/* line 196, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content ol {
+  padding: 0 0 0 0em;
+  list-style-position: outside;
+  font-size: 14px;
+}
+/* line 201, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content ol img {
+  position: relative;
+  left: -15px;
+  display: block;
+  margin: 22px auto 22px auto;
+  max-width: 100%;
+}
+/* line 208, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content div {
+  color: white;
+  border-top: 2px solid white;
+  padding: 1em 0;
+}
+/* line 213, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content ul {
+  padding: 0;
+  margin: 22px 0;
+}
+/* line 217, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 222, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content li span:first-child {
+  display: inline-block;
+  width: 25%;
+}
+/* line 226, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content li span:not(:first-child) {
+  display: inline-block;
+  width: 70%;
+}
+/* line 230, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content a {
+  color: white;
+  display: inline-block;
+  max-width: 210px;
+}
+/* line 235, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content li.camera {
+  background: url("../img/nodevices/no_camera_icon.png") left center no-repeat;
+  padding: 1.5em 5em;
+}
+/* line 239, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .help-content li.microphone {
+  background: url("../img/nodevices/no_mic_icon.png") 4px center no-repeat;
+  padding: 1.5em 5em;
+}
+/* line 246, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .no-devices ul {
+  list-style-type: none;
+  padding-left: 25%;
+  border-bottom: 1px solid #cccccc;
+}
+/* line 250, /Users/will/work/web/webrtc-phone/instacall/compile/sass/help-overlay.sass */
+#help-overlay .no-devices p {
+  clear: both;
+}

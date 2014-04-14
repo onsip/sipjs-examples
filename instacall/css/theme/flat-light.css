@@ -1,0 +1,62 @@
+/* line 3, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #multi-button:not(.foreground), html.theme-flat-light #audio-dial-button, html.theme-flat-light #video-dial-button {
+  background-color: #2ac56c;
+  border-radius: 6px;
+}
+/* line 6, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #multi-button:not(.foreground):hover, html.theme-flat-light #audio-dial-button:hover, html.theme-flat-light #video-dial-button:hover {
+  background-color: #17aa56;
+}
+/* line 8, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #multi-button:not(.foreground):active, html.theme-flat-light #audio-dial-button:active, html.theme-flat-light #video-dial-button:active {
+  background-color: #0a833d;
+}
+/* line 12, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #multi-button.foreground {
+  background-color: #f06060;
+  border-radius: 6px;
+}
+/* line 15, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #multi-button.foreground:hover {
+  background-color: #cb4e4e;
+}
+/* line 17, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #multi-button.foreground:active {
+  background-color: #ab3c3c;
+}
+/* line 20, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light.has-dtmf #multi-button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/* line 24, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light .dtmf {
+  background-color: white;
+  border: 1px solid #9b9b9b;
+  color: gray;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all0 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+/* line 32, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light .dtmf:hover {
+  background-color: lightgrey;
+}
+/* line 34, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light .dtmf:active, html.theme-flat-light .dtmf.dtmf-active {
+  color: white;
+  background-color: gray;
+  -webkit-transition: 0;
+  -moz-transition: 0;
+  -o-transition: 0;
+  transition: 0;
+}
+/* line 43, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #dtmfButtons .row:nth-of-type(1) button:nth-of-type(1) {
+  border-top-left-radius: 6px;
+}
+/* line 47, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #dtmfButtons .row:nth-of-type(1) button:nth-of-type(3) {
+  border-top-right-radius: 6px;
+}

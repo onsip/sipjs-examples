@@ -1,0 +1,1021 @@
+/* line 66, ../../sprite/mute/*.png */
+.mute-sprite, #mute-check:hover > span:not(:last-child), #mute-box + span:not(:last-child), #mute-box:checked + span:not(:last-child) {
+  background: url('../img/sprite/mute-se89f22fc16.png') no-repeat;
+}
+
+/* line 58, ../../sprite/video/*.png */
+.video-sprite, #video-check:hover > span:not(:last-child), #video-box + span:not(:last-child), #video-box:checked + span:not(:last-child) {
+  background: url('../img/sprite/video-s93a39489c6.png') no-repeat;
+}
+
+/* line 11, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.preview {
+  pointer-events: none;
+}
+/* line 14, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.preview body {
+  margin: 0;
+  pointer-events: none;
+}
+/* line 18, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.preview #bottom {
+  margin-left: 0;
+}
+/* line 21, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.preview #unsupported, html.preview #overlay, html.preview #help-overlay {
+  display: none;
+}
+
+/* line 25, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.preview:not(.video-device) #multi-box {
+  margin-left: 0;
+}
+
+/* line 28, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.sidebar {
+  height: 100%;
+}
+/* line 31, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.sidebar body, html.sidebar main, html.sidebar #popup {
+  height: 100%;
+}
+
+/* ==========================================================================
+ * HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+ * ========================================================================== */
+/* line 38, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html, button, input, select, textarea {
+  color: #222222;
+}
+
+/* line 41, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+body {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* line 45, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+::-moz-selection, ::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 49, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 57, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+img {
+  vertical-align: middle;
+}
+
+/* line 60, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 65, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+textarea {
+  resize: vertical;
+}
+
+/* line 68, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.chromeframe {
+  margin: 0.2em 0;
+  background: #cccccc;
+  color: black;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+ * JQuery Overrides
+ * ========================================================================== */
+/* line 78, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
+/* line 81, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.ui-slider-handle {
+  background-color: green;
+}
+
+/* line 84, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.ui-slider {
+  border: 1px solid #dedede;
+  display: inline-block;
+  width: 112px;
+  margin-left: 0.5em;
+}
+
+/* line 90, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.ui-slider-range-min {
+  background-color: #fd8224;
+}
+
+/* line 93, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.ui-slider-handle {
+  display: none;
+}
+
+/* ==========================================================================
+ * Author's custom styles
+ * ========================================================================== */
+/*     ======================================================================
+ *     Items used throughout
+ *     ====================================================================== */
+/* line 104, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html {
+  background-color: white;
+  font-size: 12px;
+}
+
+/* line 108, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+body {
+  margin: 0 auto;
+  color: #444444;
+  transition: background-color 1s ease-out;
+}
+
+/* line 113, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.small {
+  background-color: white;
+}
+
+/* line 116, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+header {
+  overflow: hidden;
+}
+
+/* line 119, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+main {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* line 124, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.sidebar main {
+  overflow: auto;
+}
+
+/* line 127, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#multi-box {
+  position: relative;
+  border: 1px solid lightgrey;
+  border-top: 0;
+  width: 318px;
+  color: gray;
+  background-color: white;
+  margin: auto;
+}
+
+/* line 136, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.sidebar #multi-box {
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  width: 320px;
+}
+
+/* line 142, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.foreground {
+  z-index: 51;
+}
+
+/* line 145, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.sidebar #close-header {
+  display: block;
+  height: 20px;
+  background: #cccccc;
+}
+
+/* line 150, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#close-header {
+  display: none;
+}
+
+/* line 153, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #666666;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  z-index: 50;
+}
+
+/* line 169, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.webrtc #overlay.overlayabsent {
+  opacity: 0 !important;
+  -webkit-transition: opacity 0.5s ease-out, visibility 0s ease-out 0.5s !important;
+  -moz-transition: opacity 0.5s ease-out, visibility 0s ease-out 0.5s !important;
+  -o-transition: opacity 0.5s ease-out, visibility 0s ease-out 0.5s !important;
+  transition: opacity 0.5s ease-out, visibility 0s ease-out 0.5s !important;
+  visibility: hidden;
+}
+
+/* line 177, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#status {
+  position: relative;
+  border-bottom: 1px solid lightgrey;
+  font-size: 1.334em;
+  height: 2.51em;
+  padding-top: 3px;
+  line-height: 2.51em;
+  margin-bottom: 10px;
+}
+/* line 185, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#status > div {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  transition: visibility 0s linear, opacity 0.5s linear;
+  -webkit-transition: visibility 0s linear, opacity 0.5s linear;
+  -o-transition: visibility 0s linear, opacity 0.5s linear;
+  -moz-transition: visibility 0s linear, opacity 0.5s linear;
+}
+/* line 193, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#status > div > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 197, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.uncollapseMargins {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+/* line 202, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#multi-button, #audio-dial-button, #video-dial-button {
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 10px 1.21rem 30px;
+  width: -webkit-calc(100% - 2.42rem);
+  width: calc(100% - 2.42rem);
+  font-size: 1.7em;
+  height: 2.7em;
+  color: white;
+}
+/* line 213, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#multi-button:before, #audio-dial-button:before, #video-dial-button:before {
+  display: block;
+  content: " ";
+  height: 0;
+  width: 0;
+}
+
+/* line 219, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.sidebar #multi-button {
+  width: -webkit-calc(100% - 2.42rem - 1px);
+  width: calc(100% - 2.42rem - 1px);
+}
+
+/* line 223, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#audio-dial-button, #video-dial-button {
+  display: none;
+  width: -webkit-calc(50% - 1.82rem);
+  width: calc(50% - 1.82rem);
+  color: transparent;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+/* line 232, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#audio-dial-button:before, #video-dial-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../img/white-phone-icon.png") 50% 50% no-repeat;
+}
+
+/* line 242, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#audio-dial-button {
+  margin-right: 0;
+}
+
+/* line 245, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#video-dial-button {
+  margin-left: 0.5em;
+}
+/* line 248, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#video-dial-button:before {
+  background-image: url("../img/white-video-icon.png");
+}
+
+/* line 252, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.video-device:not(.active-preview) #multi-button:not(.foreground) {
+  display: none;
+}
+/* line 255, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.video-device:not(.active-preview) #audio-dial-button, html.video-device:not(.active-preview) #video-dial-button {
+  display: inline-block;
+}
+
+/* line 258, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.has-dtmf #multi-button {
+  margin-top: 0;
+}
+
+/* line 261, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+button {
+  display: inline-block;
+  position: relative;
+  padding: 0 1.5em;
+  border: none;
+  outline: none;
+  top: 0;
+  left: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  margin: -4px 0 4px 4px;
+  vertical-align: top;
+}
+
+/* line 275, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#help {
+  color: white;
+  display: inline-block;
+  margin: 0.75em 0 0 1.35em;
+  line-height: 1em;
+}
+/* line 281, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#help a {
+  color: white;
+  text-decoration: none;
+}
+/* line 285, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#help a:hover {
+  text-decoration: underline;
+}
+
+/* line 288, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#onsip {
+  color: white;
+  text-decoration: none;
+  float: right;
+  margin: 0.75em 1.35em 0 0;
+  line-height: 1em;
+}
+/* line 294, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#onsip:hover {
+  text-decoration: underline;
+}
+
+/* line 297, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#onsip-pic {
+  background: url(../img/onsip_white.png) no-repeat;
+  height: 1.2em;
+  width: 40px;
+  background-size: 100%;
+  display: inline-block;
+  float: right;
+  margin-left: 0.2em;
+}
+
+/* line 306, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#bottom {
+  background-color: #666666;
+  font-size: 0.83em;
+  transition: width 1s ease-out;
+  -webkit-transition: width 1s ease-out;
+  -o-transition: width 1s ease-out;
+  -moz-transition: width 1s ease-out;
+  margin: auto;
+  height: 2.71em;
+  z-index: 1010;
+}
+
+/* line 317, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.sidebar #bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* line 323, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.no-logo #bottom {
+  visibility: hidden !important;
+}
+
+/* line 327, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.mozilla #bottom {
+  padding-bottom: 1em;
+}
+
+/* line 330, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.skinny {
+  width: 320px;
+  margin: auto;
+}
+
+/* line 335, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+input[type='text'], input[type='password'] {
+  border-radius: 0.25em;
+  padding-left: 5px;
+  height: 2em;
+  line-height: 2em;
+  border: 1px solid #999999;
+}
+/* line 341, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+input[type='submit'] {
+  position: absolute;
+  left: -9999px;
+}
+
+/* line 345, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#mute-check, #video-check {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+/*     ======================================================================
+ *     Startup elements
+ *     ====================================================================== */
+/* line 354, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#intro {
+  overflow: hidden;
+}
+
+/* line 357, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#unsupported {
+  background-color: #ab3c3c;
+  position: relative;
+  color: white;
+  z-index: 51;
+  height: 2.83em;
+  line-height: 1.25em;
+  padding: 0.5em 0.75em 0 0.75em;
+}
+
+/* line 366, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#name {
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 10px 1.21rem;
+  width: -webkit-calc(100% - 2.42rem - 10px);
+  width: calc(100% - 2.42rem);
+  font-size: 1.38em;
+  padding-left: 10px;
+  clear: both;
+  height: -webkit-calc(2em + 2px);
+  height: calc(2em + 2px);
+}
+
+/* line 379, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html:not(.has-name-field) #name {
+  display: none;
+}
+
+/* line 382, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.error {
+  color: red;
+}
+
+/* line 385, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#video-text {
+  line-height: 1.5em;
+  float: left;
+}
+
+/* line 389, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html:not(.video-device) #video-check {
+  display: none;
+}
+
+/* line 392, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#video-check {
+  display: none;
+  font-size: 1.2em;
+  height: 22px;
+  float: left;
+}
+/* line 397, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#video-check:hover > span:not(:last-child) {
+  background-position: 0 -25px;
+  height: 20px;
+  width: 20px;
+}
+
+/* line 400, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#video-box {
+  display: none;
+}
+/* line 402, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#video-box + span:not(:last-child) {
+  background-position: 0 -50px;
+  height: 20px;
+  width: 20px;
+  float: left;
+  margin: 0 0.49em 1em 1.21rem;
+}
+/* line 406, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#video-box:checked + span:not(:last-child) {
+  background-position: 0 0;
+  height: 20px;
+  width: 20px;
+}
+
+/*     ======================================================================
+ *     Phone elements
+ *     ====================================================================== */
+/* line 414, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#company {
+  margin-left: 1.22em;
+  float: left;
+}
+
+/* line 418, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#timer {
+  float: right;
+  margin-right: 1.25em;
+  letter-spacing: 1px;
+}
+
+/* line 423, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+video {
+  background: #eeeeee;
+}
+
+/* line 426, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#streams {
+  position: relative;
+  width: 640px;
+  height: 480px;
+  margin: auto;
+}
+
+/* line 432, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.sidebar #streams {
+  width: 320px;
+  height: 240px;
+}
+
+/* line 436, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.active-preview #no-video {
+  background: #cccccc url("../img/video-large.png") center -30px no-repeat;
+}
+
+/* line 439, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.active-preview #stream-local {
+  background: #cccccc url("../img/video-small.png") center no-repeat;
+  width: 160px;
+  height: 120px;
+}
+
+/* line 444, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#no-video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #cccccc url("../img/no-video.png") center -30px no-repeat;
+  background-size: 100%;
+  top: 0;
+  left: 0;
+  color: transparent;
+}
+
+/* line 454, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#stream-remote {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 458, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#stream-local {
+  position: absolute;
+  bottom: 3em;
+  left: 0.5em;
+  width: 25%;
+  background: black;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+/* line 468, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#video-switch {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.99;
+  cursor: pointer;
+  color: #dddddd;
+}
+/* line 476, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#video-switch:hover {
+  color: white;
+}
+
+/* line 479, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#switch-background {
+  position: absolute;
+  margin: 0;
+  background-color: gray;
+  opacity: 0.7;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* line 491, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#switch-text {
+  line-height: 2.5em;
+  padding-left: 0.83em;
+  font-weight: bold;
+  top: 0;
+  left: 0;
+}
+
+/* line 498, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#mute-check {
+  float: left;
+  margin-top: 0.3em;
+}
+/* line 501, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#mute-check:hover > span:not(:last-child) {
+  background-position: 0 -25px;
+  height: 20px;
+  width: 20px;
+}
+
+/* line 504, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#mute-text {
+  font-size: 1.2em;
+  vertical-align: top;
+  line-height: 1.5em;
+}
+
+/* line 509, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#mute-box {
+  display: none;
+}
+/* line 511, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#mute-box + span:not(:last-child) {
+  background-position: 0 -75px;
+  height: 20px;
+  width: 20px;
+  float: left;
+  margin-bottom: 1em;
+  padding-right: 0.49em;
+}
+/* line 516, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#mute-box:checked + span:not(:last-child) {
+  background-position: 0 -50px;
+  height: 20px;
+  width: 20px;
+}
+
+/* line 519, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#controls {
+  clear: both;
+  border-bottom: 1px solid lightgrey;
+  border-radius: 0.25em;
+  height: 3.33em;
+  padding: 0 1.67em;
+  margin-bottom: 1.5em;
+}
+
+/* line 527, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.sidebar #controls {
+  border-radius: 0;
+}
+
+/* line 530, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.img {
+  padding: 0;
+}
+
+/* line 533, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#volume {
+  float: right;
+  display: inline-block;
+  margin-top: 0.6em;
+}
+
+/* line 538, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#volume-pic, #volume-slider {
+  float: right;
+}
+
+/* line 541, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#volume-pic {
+  margin: -0.4em 0.3em 0 0;
+  width: 24px;
+  height: 24px;
+  background: url(../img/volume.png) no-repeat;
+  background-size: contain;
+  position: relative;
+}
+/* line 549, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#volume-pic:after {
+  content: " ";
+  display: block;
+  background: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+}
+/* line 559, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#volume-pic.low:after {
+  width: 40%;
+}
+/* line 562, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#volume-pic.med:after {
+  width: 20%;
+}
+
+/* line 565, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#volume-slider {
+  -webkit-appearance: none !important;
+  background: white;
+  border: 1px solid darkgrey;
+  height: 0.5em;
+  margin-top: 0.2em;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #cccccc), color-stop(80%, #cccccc), color-stop(81%, white), color-stop(100%, white));
+  background-image: -moz-linear-gradient(left, #cccccc 0%, #cccccc 80%, white 81%, white 100%);
+}
+/* line 573, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#volume-slider:focus {
+  outline: none;
+}
+/* line 575, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#volume-slider::-moz-range-track {
+  visibility: hidden;
+}
+/* line 577, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#volume-slider::-moz-range-thumb {
+  display: block;
+  background: transparent;
+  border: none;
+  height: 0.1em;
+  width: 0.1em;
+}
+/* line 584, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  display: block;
+  background: transparent;
+  height: 0.1em;
+  width: 0.1em;
+}
+
+/*     ======================================================================
+ *     DTMF
+ *     ====================================================================== */
+/* line 595, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html.has-dtmf #multi-button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* line 599, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.row {
+  margin: 0 auto;
+}
+
+/* line 602, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#dtmfButtons {
+  margin: 0 auto;
+  width: -webkit-calc(100% - 2.42rem);
+  width: calc(100% - 2.42rem);
+  height: 216px;
+  overflow: hidden;
+}
+
+/* line 609, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.dtmf {
+  text-indent: 0;
+  display: inline-block;
+  font-style: normal;
+  height: 4.52em;
+  width: 33.3%;
+  text-decoration: none;
+  text-align: center;
+  margin: 0;
+  float: left;
+  vertical-align: top;
+}
+/* line 620, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.dtmf:active {
+  -webkit-transition: 0;
+  -moz-transition: 0;
+  -o-transition: 0;
+  transition: 0;
+}
+/* line 625, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.dtmf > span {
+  margin: 0;
+  display: block;
+}
+
+/* line 629, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.number {
+  font-size: 1.33em;
+  padding-bottom: 4px;
+}
+
+/* line 633, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.star {
+  font-size: 2.5em;
+  padding-top: 8px;
+}
+
+/* line 637, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.pound {
+  font-size: 1.5em;
+}
+
+/* ==========================================================================
+ * Height Transitions: Since most are the same I thought it'd be better to group them
+ * ========================================================================== */
+/* line 644, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#dtmfButtons, #controls, #intro {
+  transition: height 1s ease-out, margin-top 1s ease-out, margin-bottom 1s ease-out;
+  -webkit-transition: height 1s ease-out, margin-top 1s ease-out, margin-bottom 1s ease-out;
+  -o-transition: height 1s ease-out, margin-top 1s ease-out, margin-bottom 1s ease-out;
+  -moz-transition: height 1s ease-out, margin-top 1s ease-out, margin-bottom 1s ease-out;
+}
+
+/* line 650, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+#streams {
+  transition: height 1.5s linear, margin-top 1s ease-out, margin-bottom 1s ease-out;
+  -o-transition: height 1.5s linear, margin-top 1s ease-out, margin-bottom 1s ease-out;
+  -webkit-transition: height 1.5s linear, margin-top 1s ease-out, margin-bottom 1s ease-out;
+  -moz-transition: height 1.5s linear, margin-top 1s ease-out, margin-bottom 1s ease-out;
+}
+
+/* ==========================================================================
+ * Helper classes
+ * ========================================================================== */
+/* line 660, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  *text-indent: -9999px;
+}
+/* line 665, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/* line 671, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+html:not(.has-dtmf) #dtmfButtons,
+.hidden {
+  height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  overflow: hidden;
+}
+
+/* line 680, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear !important;
+}
+/* line 684, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.invisible * {
+  -webkit-animation: none !important;
+  animation: none !important;
+}
+
+/* line 688, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.disabled {
+  display: none !important;
+}
+
+/* line 691, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.clearfix {
+  *zoom: 1;
+}
+/* line 692, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.clearfix:before {
+  content: " ";
+  display: table;
+}
+/* line 695, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+/* ==========================================================================
+ * Print styles
+ * ========================================================================== */
+@media print {
+  /* line 706, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  * {
+    background: transparent !important;
+    color: black !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 712, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  a {
+    text-decoration: underline;
+  }
+  /* line 714, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  a:visited {
+    text-decoration: underline;
+  }
+  /* line 716, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 718, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* Don't show links for images, or javascript/internal links */
+  /* line 722, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  .ir a:after {
+    content: "";
+  }
+
+  /* line 725, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* line 727, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  pre, blockquote {
+    border: 1px solid #999999;
+    page-break-inside: avoid;
+  }
+
+  /* line 730, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  /* line 733, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  tr {
+    page-break-inside: avoid;
+  }
+
+  /* line 735, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  img {
+    page-break-inside: avoid;
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 741, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 744, /Users/will/work/web/webrtc-phone/instacall/compile/sass/layout.sass */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}

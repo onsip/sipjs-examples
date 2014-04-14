@@ -1,0 +1,128 @@
+/* line 1, /Users/will/work/web/webrtc-phone/instacall/compile/sass/sidebar.sass */
+html.ic-shift {
+  position: relative !important;
+  top: 0 !important;
+  left: 320px !important;
+  width: 100% !important;
+}
+
+/* line 7, /Users/will/work/web/webrtc-phone/instacall/compile/sass/sidebar.sass */
+#ic-frame {
+  position: absolute;
+  top: 0;
+  left: -320px;
+  width: 320px;
+  height: 100%;
+  border: none;
+  border-right: 1px solid #cccccc;
+}
+
+/* line 16, /Users/will/work/web/webrtc-phone/instacall/compile/sass/sidebar.sass */
+#ic-frame-close {
+  position: absolute;
+  top: 0;
+  left: -25px;
+  height: 20px;
+  width: 20px;
+  z-index: 1000;
+  background: url("../img/x-666666.png") no-repeat center;
+  background-size: 9px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: transparent;
+  cursor: pointer;
+}
+/* line 31, /Users/will/work/web/webrtc-phone/instacall/compile/sass/sidebar.sass */
+#ic-frame-close:hover {
+  background-image: url("../img/x-000000.png");
+}
+
+/* line 10, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+body {
+  position: absolute;
+  top: 5px;
+  left: 500px;
+  padding: 0 !important;
+}
+
+/* line 16, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+#header .top-nav .onsipInstacall li {
+  padding: 11px;
+  margin: 0;
+  float: none;
+}
+
+/* line 21, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+a.onsipInstacall {
+  background-image: linear-gradient(to top, #ff8200, #ff5700);
+  height: 16px !important;
+  padding-left: 8px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  font: 16px/16px "Kepler Regular", Times, serif;
+}
+/* line 29, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+a.onsipInstacall .phonenum a {
+  color: white;
+}
+/* line 32, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+a.onsipInstacall:hover {
+  background-image: none;
+}
+
+/* line 35, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+.ic-color {
+  background-color: #ff8200;
+  border-right-color: #ff8200;
+  border-bottom-color: #ff8200;
+}
+
+/* line 40, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+.ic-color:hover, .ic-li:hover > .ic-color {
+  background-color: #ff5700;
+  border-bottom-color: #ff5700;
+  border-right-color: #ff5700;
+}
+
+/* line 45, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+li.ic-li {
+  font-family: "Kepler Regular";
+  font-size: 16px;
+}
+
+/* line 49, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+li.ic-li-video {
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: default;
+  color: transparent;
+}
+/* line 56, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+li.ic-li-video:before, li.ic-li-video:after {
+  transition: opacity 1s;
+  position: absolute;
+  top: 11px;
+  left: 11px;
+  border: none;
+  color: white;
+}
+/* line 64, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+li.ic-li-video:after {
+  content: "Call with video";
+  opacity: 1;
+}
+/* line 68, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+li.ic-li-video:before {
+  content: "Coming Soon";
+  opacity: 0;
+}
+/* line 73, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+li.ic-li-video:hover:after {
+  opacity: 0;
+}
+/* line 76, /Users/will/work/web/webrtc-phone/instacall/compile/sass/onsipbutton.sass */
+li.ic-li-video:hover:before {
+  opacity: 1;
+}

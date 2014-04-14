@@ -1,0 +1,355 @@
+/* line 66, ../../sprite/mute/*.png */
+.mute-sprite, html.theme-flat-dark #mute-box + span:not(:last-child), html.theme-flat-dark #mute-box:checked + span:not(:last-child), html.theme-skeu-dark #mute-box + span:not(:last-child), html.theme-skeu-dark #mute-box:checked + span:not(:last-child) {
+  background: url('../img/sprite/mute-s32d676cfb8.png') no-repeat;
+}
+
+/* line 3, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #multi-button:not(.foreground), html.theme-flat-light #audio-dial-button, html.theme-flat-light #video-dial-button {
+  background-color: #2ac56c;
+  border-radius: 6px;
+}
+/* line 6, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #multi-button:not(.foreground):hover, html.theme-flat-light #audio-dial-button:hover, html.theme-flat-light #video-dial-button:hover {
+  background-color: #17aa56;
+}
+/* line 8, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #multi-button:not(.foreground):active, html.theme-flat-light #audio-dial-button:active, html.theme-flat-light #video-dial-button:active {
+  background-color: #0a833d;
+}
+/* line 12, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #multi-button.foreground {
+  background-color: #f06060;
+  border-radius: 6px;
+}
+/* line 15, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #multi-button.foreground:hover {
+  background-color: #cb4e4e;
+}
+/* line 17, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #multi-button.foreground:active {
+  background-color: #ab3c3c;
+}
+/* line 20, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light.has-dtmf #multi-button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/* line 24, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light .dtmf {
+  background-color: white;
+  border: 1px solid #9b9b9b;
+  color: gray;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all0 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+/* line 32, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light .dtmf:hover {
+  background-color: lightgrey;
+}
+/* line 34, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light .dtmf:active, html.theme-flat-light .dtmf.dtmf-active {
+  color: white;
+  background-color: gray;
+  -webkit-transition: 0;
+  -moz-transition: 0;
+  -o-transition: 0;
+  transition: 0;
+}
+/* line 43, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #dtmfButtons .row:nth-of-type(1) button:nth-of-type(1) {
+  border-top-left-radius: 6px;
+}
+/* line 47, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/flat-light.sass */
+html.theme-flat-light #dtmfButtons .row:nth-of-type(1) button:nth-of-type(3) {
+  border-top-right-radius: 6px;
+}
+
+/* line 3, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark body {
+  font: 1em "Helvetica Neue";
+}
+/* line 6, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark main, html.theme-flat-dark #multi-box {
+  background-color: #dddddd;
+}
+/* line 9, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark input {
+  background-color: #f1f1f1;
+}
+/* line 12, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #status, html.theme-flat-dark #controls {
+  border-bottom: 1px solid darkgrey;
+}
+/* line 16, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #volume-pic:after {
+  background-color: #dddddd;
+}
+/* line 19, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #volume-slider {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #444444), color-stop(80%, #444444), color-stop(81%, #666666), color-stop(100%, #666666));
+  background-image: -moz-linear-gradient(left, #444444 0%, #444444 80%, #666666 81%, #666666 100%);
+}
+/* line 23, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #mute-box {
+  display: none;
+}
+/* line 25, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #mute-box + span:not(:last-child) {
+  background-position: 0 -60px;
+  float: left;
+  margin-bottom: 1em;
+  padding-right: 0.49em;
+}
+/* line 30, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #mute-box:checked + span:not(:last-child) {
+  background-position: 0 0;
+}
+/* line 34, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #multi-button.foreground {
+  background-color: #862c2c;
+  border-radius: 6px;
+}
+/* line 37, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #multi-button.foreground:hover {
+  background-color: #7c2222;
+}
+/* line 39, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #multi-button.foreground:active {
+  background-color: #511111;
+}
+/* line 44, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #multi-button:not(.foreground), html.theme-flat-dark #audio-dial-button, html.theme-flat-dark #video-dial-button {
+  background-color: #2ac56c;
+  border-radius: 6px;
+  border: 2px solid #0b8b42;
+}
+/* line 48, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #multi-button:not(.foreground):hover, html.theme-flat-dark #audio-dial-button:hover, html.theme-flat-dark #video-dial-button:hover {
+  background-color: #289456;
+}
+/* line 50, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #multi-button:not(.foreground):active, html.theme-flat-dark #audio-dial-button:active, html.theme-flat-dark #video-dial-button:active {
+  background-color: #1d8a4c;
+}
+/* line 53, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark.has-dtmf #multi-button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/* line 57, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark .dtmf {
+  background-color: #444444;
+  color: white;
+  border: 1px solid black;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all0 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+/* line 65, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark .dtmf:hover {
+  background-color: #333333;
+}
+/* line 67, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark .dtmf:active {
+  color: gray;
+  background-color: #222222;
+  -webkit-transition: 0;
+  -moz-transition: 0;
+  -o-transition: 0;
+  transition: 0;
+}
+/* line 77, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #dtmfButtons .row:nth-of-type(1) button:nth-of-type(1) {
+  border-top-left-radius: 6px;
+}
+/* line 81, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_flat-dark.sass */
+html.theme-flat-dark #dtmfButtons .row:nth-of-type(1) button:nth-of-type(3) {
+  border-top-right-radius: 6px;
+}
+
+/* line 3, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/skeu-light.sass */
+html.theme-skeu-light body {
+  font: 1em "Lucida";
+}
+/* line 6, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/skeu-light.sass */
+html.theme-skeu-light .dtmf {
+  background: #444444;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  color: white;
+  text-shadow: -1px -1px 0 #676767;
+  background-image: -webkit-linear-gradient(top, #626262, #444444 30%, #444444 60%, #3a3a3a);
+  background-image: -moz-linear-gradient(top, #626262, #444444 30%, #444444 60%, #3a3a3a);
+  background-image: -ms-linear-gradient(top, #626262, #444444 30%, #444444 60%, #3a3a3a);
+  background-image: -o-linear-gradient(top, #626262, #444444 30%, #444444 60%, #3a3a3a);
+  background-image: linear-gradient(to bottom, #626262, #444444 30%, #444444 60%, #3a3a3a);
+  -webkit-box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+  -moz-box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+  box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+}
+/* line 23, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/skeu-light.sass */
+html.theme-skeu-light .dtmf:active, html.theme-skeu-light .dtmf.dtmf-active {
+  padding-top: 5px;
+  background-image: -webkit-linear-gradient(top, #3a3a3a, #444444 30%, #444444 60%, #626262);
+  background-image: -moz-linear-gradient(top, #3a3a3a, #444444 30%, #444444 60%, #626262);
+  background-image: -ms-linear-gradient(top, #3a3a3a, #444444 30%, #444444 60%, #626262);
+  background-image: -o-linear-gradient(top, #3a3a3a, #444444 30%, #444444 60%, #626262);
+  background-image: linear-gradient(to bottom, #3a3a3a, #444444 30%, #444444 60%, #626262);
+}
+/* line 32, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/skeu-light.sass */
+html.theme-skeu-light #multi-button.foreground {
+  background-color: #5c2929;
+  border: 1px solid black;
+  background-image: -webkit-linear-gradient(top, #6d3f3f, #5c2929 30%, #5c2929 60%, #512424);
+  background-image: -moz-linear-gradient(top, #6d3f3f, #5c2929 30%, #5c2929 60%, #512424);
+  background-image: -ms-linear-gradient(top, #6d3f3f, #5c2929 30%, #5c2929 60%, #512424);
+  background-image: -o-linear-gradient(top, #6d3f3f, #5c2929 30%, #5c2929 60%, #512424);
+  background-image: linear-gradient(to bottom, #6d3f3f, #5c2929 30%, #5c2929 60%, #512424);
+  -webkit-box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+  -moz-box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+  box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+}
+/* line 46, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/skeu-light.sass */
+html.theme-skeu-light #multi-button.foreground:active {
+  padding-top: 5px;
+  background-image: -webkit-linear-gradient(top, #512424, #5c2929 30%, #5c2929 60%, #6d3f3f);
+  background-image: -moz-linear-gradient(top, #512424, #5c2929 30%, #5c2929 60%, #6d3f3f);
+  background-image: -ms-linear-gradient(top, #512424, #5c2929 30%, #5c2929 60%, #6d3f3f);
+  background-image: -o-linear-gradient(top, #512424, #5c2929 30%, #5c2929 60%, #6d3f3f);
+  background-image: linear-gradient(to bottom, #512424, #5c2929 30%, #5c2929 60%, #6d3f3f);
+}
+/* line 55, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/skeu-light.sass */
+html.theme-skeu-light #multi-button:not(.foreground), html.theme-skeu-light #audio-dial-button, html.theme-skeu-light #video-dial-button {
+  background-color: #295c29;
+  border: 1px solid black;
+  background-image: -webkit-linear-gradient(top, #3f6d3f, #295c29 30%, #295c29 60%, #245124);
+  background-image: -moz-linear-gradient(top, #3f6d3f, #295c29 30%, #295c29 60%, #245124);
+  background-image: -ms-linear-gradient(top, #3f6d3f, #295c29 30%, #295c29 60%, #245124);
+  background-image: -o-linear-gradient(top, #3f6d3f, #295c29 30%, #295c29 60%, #245124);
+  background-image: linear-gradient(to bottom, #3f6d3f, #295c29 30%, #295c29 60%, #245124);
+  -webkit-box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+  -moz-box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+  box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+}
+/* line 69, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/skeu-light.sass */
+html.theme-skeu-light #multi-button:not(.foreground):active, html.theme-skeu-light #audio-dial-button:active, html.theme-skeu-light #video-dial-button:active {
+  padding-top: 5px;
+  background-image: -webkit-linear-gradient(top, #245124, #295c29 30%, #295c29 60%, #3f6d3f);
+  background-image: -moz-linear-gradient(top, #245124, #295c29 30%, #295c29 60%, #3f6d3f);
+  background-image: -ms-linear-gradient(top, #245124, #295c29 30%, #295c29 60%, #3f6d3f);
+  background-image: -o-linear-gradient(top, #245124, #295c29 30%, #295c29 60%, #3f6d3f);
+  background-image: linear-gradient(to bottom, #245124, #295c29 30%, #295c29 60%, #3f6d3f);
+}
+
+/* line 3, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark body {
+  font: 1em "Lucida";
+}
+/* line 6, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark main, html.theme-skeu-dark #multi-box {
+  background-color: #dddddd;
+}
+/* line 9, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark input {
+  background-color: #f1f1f1;
+}
+/* line 12, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark #status, html.theme-skeu-dark #controls {
+  border-bottom: 1px solid darkgrey;
+}
+/* line 16, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark #volume-pic:after {
+  background-color: #dddddd;
+}
+/* line 19, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark #volume-slider {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #444444), color-stop(80%, #444444), color-stop(81%, #666666), color-stop(100%, #666666));
+  background-image: -moz-linear-gradient(left, #444444 0%, #444444 80%, #666666 81%, #666666 100%);
+}
+/* line 23, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark #mute-box {
+  display: none;
+}
+/* line 25, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark #mute-box + span:not(:last-child) {
+  background-position: 0 -60px;
+  float: left;
+  margin-bottom: 1em;
+  padding-right: 0.49em;
+}
+/* line 30, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark #mute-box:checked + span:not(:last-child) {
+  background-position: 0 0;
+}
+/* line 33, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark .dtmf {
+  background: #444444;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  color: white;
+  text-shadow: -1px -1px 0 #676767;
+  background-image: -webkit-linear-gradient(top, #626262, #444444 30%, #444444 60%, #3a3a3a);
+  background-image: -moz-linear-gradient(top, #626262, #444444 30%, #444444 60%, #3a3a3a);
+  background-image: -ms-linear-gradient(top, #626262, #444444 30%, #444444 60%, #3a3a3a);
+  background-image: -o-linear-gradient(top, #626262, #444444 30%, #444444 60%, #3a3a3a);
+  background-image: linear-gradient(to bottom, #626262, #444444 30%, #444444 60%, #3a3a3a);
+  -webkit-box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+  -moz-box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+  box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+}
+/* line 50, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark .dtmf:active, html.theme-skeu-dark .dtmf.dtmf-active {
+  padding-top: 5px;
+  background-image: -webkit-linear-gradient(top, #3a3a3a, #444444 30%, #444444 60%, #626262);
+  background-image: -moz-linear-gradient(top, #3a3a3a, #444444 30%, #444444 60%, #626262);
+  background-image: -ms-linear-gradient(top, #3a3a3a, #444444 30%, #444444 60%, #626262);
+  background-image: -o-linear-gradient(top, #3a3a3a, #444444 30%, #444444 60%, #626262);
+  background-image: linear-gradient(to bottom, #3a3a3a, #444444 30%, #444444 60%, #626262);
+}
+/* line 59, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark #multi-button.foreground {
+  background-color: #862c2c;
+  border: 1px solid black;
+  background-image: -webkit-linear-gradient(top, #6d3f3f, #862c2c 30%, #862c2c 60%, #512424);
+  background-image: -moz-linear-gradient(top, #6d3f3f, #862c2c 30%, #862c2c 60%, #512424);
+  background-image: -ms-linear-gradient(top, #6d3f3f, #862c2c 30%, #862c2c 60%, #512424);
+  background-image: -o-linear-gradient(top, #6d3f3f, #862c2c 30%, #862c2c 60%, #512424);
+  background-image: linear-gradient(to bottom, #6d3f3f, #862c2c 30%, #862c2c 60%, #512424);
+  -webkit-box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+  -moz-box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+  box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+}
+/* line 73, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark #multi-button.foreground:active {
+  padding-top: 5px;
+  background-image: -webkit-linear-gradient(top, #512424, #862c2c 30%, #862c2c 60%, #6d3f3f);
+  background-image: -moz-linear-gradient(top, #512424, #862c2c 30%, #862c2c 60%, #6d3f3f);
+  background-image: -ms-linear-gradient(top, #512424, #862c2c 30%, #862c2c 60%, #6d3f3f);
+  background-image: -o-linear-gradient(top, #512424, #862c2c 30%, #862c2c 60%, #6d3f3f);
+  background-image: linear-gradient(to bottom, #512424, #862c2c 30%, #862c2c 60%, #6d3f3f);
+}
+/* line 82, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark #multi-button:not(.foreground), html.theme-skeu-dark #audio-dial-button, html.theme-skeu-dark #video-dial-button {
+  background-color: #295c29;
+  border: 1px solid black;
+  background-image: -webkit-linear-gradient(top, #3f6d3f, #295c29 30%, #295c29 60%, #245124);
+  background-image: -moz-linear-gradient(top, #3f6d3f, #295c29 30%, #295c29 60%, #245124);
+  background-image: -ms-linear-gradient(top, #3f6d3f, #295c29 30%, #295c29 60%, #245124);
+  background-image: -o-linear-gradient(top, #3f6d3f, #295c29 30%, #295c29 60%, #245124);
+  background-image: linear-gradient(to bottom, #3f6d3f, #295c29 30%, #295c29 60%, #245124);
+  -webkit-box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+  -moz-box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+  box-shadow: 1px 1px 0 rgba(155, 155, 155, 0.2) inset;
+}
+/* line 96, /Users/will/work/web/webrtc-phone/instacall/compile/sass/theme/_skeu-dark.sass */
+html.theme-skeu-dark #multi-button:not(.foreground):active, html.theme-skeu-dark #audio-dial-button:active, html.theme-skeu-dark #video-dial-button:active {
+  padding-top: 5px;
+  background-image: -webkit-linear-gradient(top, #245124, #295c29 30%, #295c29 60%, #3f6d3f);
+  background-image: -moz-linear-gradient(top, #245124, #295c29 30%, #295c29 60%, #3f6d3f);
+  background-image: -ms-linear-gradient(top, #245124, #295c29 30%, #295c29 60%, #3f6d3f);
+  background-image: -o-linear-gradient(top, #245124, #295c29 30%, #295c29 60%, #3f6d3f);
+  background-image: linear-gradient(to bottom, #245124, #295c29 30%, #295c29 60%, #3f6d3f);
+}

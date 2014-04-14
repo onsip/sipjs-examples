@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="no-js theme-flat-light help-first audio-device video-device help-overlay">
+  <head>
+    <title>Web Call</title>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+    <meta name="description" content="Make free web calls with OnSIP InstaCall, powered by the OnSIP platform.">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/help-overlay.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+    <script src="js/parse-query.js"></script>
+    <script src="js/vendor/yepnope.1.5.4-min.js"></script>
+    <script type="text/javascript">
+      yepnope({
+        test: !instacall.urlVars || instacall.urlVars.hasOwnProperty('preview') || instacall.urlVars.hasOwnProperty('active-preview'),
+        yep: 'js/preview.js',
+        nope: 'js/support.js'
+      });
+    </script>
+
+  </head>
+  <body class="small">
+    <header>
+    </header>
+    <main>
+      <div id="help-overlay">
+        <div class="chrome help-first">
+          <div class="help-content">
+            <p>Please hit the 'Allow' button above to share your<span id="chromeWording"> camera and</span> microphone.</p>
+          </div>
+          <button class="help-next">Help! I don&apos;t see an 'Allow' button.</button>
+        </div>
+
+        <div class="chrome help-second">
+          <div class="help-content">
+            <p>You should see the icon below in the top right hand corner of your browser.</p>
+            <img src="img/instacall_chrome_allow_icon.png" alt="chrome help image">
+            <p>Click on it. Select the option that starts &quot;Always Allow...&quot; and hit done.</p>
+            <p>This phone should then reload.</p>
+          </div>
+        </div>
+
+        <div class="mozilla help-first">
+          <div class="help-content">
+            <p>Please share your microphone <span id="firefoxWording"> and camera</span> by clicking on the icon shown below in the top left hand corner of your browser.</p>
+            <img src="img/instacall_firefox_share_icon.png" alt="firefox help image">
+            <p>Choose your devices to share, and click the &quot;Share selected devices&quot; button.</p>
+          </div>
+        </div>
+
+        <div class="no-js no-browser-support no-modern call-error call-complete">
+          <div class="help-content">
+            <p class="no-js">We've detected that you have Javascript disabled. Please enable Javascript and try again.</p>
+            <p class="no-modern">Your current browser does not support web calls. Please try with the latest version of <a href="http://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/en-US/" target="_blank">Firefox</a>.</p>
+            <p class="no-browser-support">Your current browser does not support web calls. Please try with the latest version of <a href="http://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/en-US/" target="_blank">Firefox</a>.</p>
+            <p class="call-error">Oops! This call could not be completed. We apologize for the inconvenience.</p>
+            <p class="call-complete" id="call-complete-message">Thank you for getting in touch with us!</p>
+            <div class="alternate-info">
+              You can also always contact us via:
+              <ul class="param-alts"></ul>
+            </div>
+            <button class="call-complete help-done">Let me make another call.</button>
+          </div>
+        </div>
+        
+        <div class="missing-params">
+          <div class="help-content">
+            <p>Oops! An error has occurred.</p>
+          </div>
+        </div>
+
+        <div class="no-devices">
+          <div class="help-content">
+            <p>Oops! It appears you're missing a camera and microphone.</p>
+
+            <p>For calls with your browser, please make sure that you have at least a microphone available.</p>
+          </div>
+
+          <button class="help-done">Okay, I got it</button>
+        </div>
+
+        <div class="lost-local-media">
+          <div class="help-content">
+
+            <!--
+            <ul>
+              <li class="camera"><span class="lost-local-video">We can't see you</span> <span>No issues</span></li>
+              <li class="microphone"><span class="lost-local-audio">We can't hear you</span> <span>No issues</span></li>
+            </ul>
+            -->
+
+            <p>Oops! We can't <span class="lost-local-video">see</span> <span class="lost-both">or</span> <span class="lost-local-audio">hear</span> you! Please ensure your <span class="lost-local-video">camera</span> <span class="lost-both">and</span> <span class="lost-local-audio">microphone</span> <span class="lost-both">are</span> <span class="not-lost-both">is</span> still plugged in and turned on, then reload this page.</p>
+          </div>
+
+          <button class="help-done">Okay, I got it</button>
+        </div>
+      </div>
+      <div id="overlay"></div>
+
+      <div id="popup">
+        <div id="close-header"></div>
+        <div id="streams" class="hidden">
+          <div id="no-video" class="hide">No incoming video received.</div>
+          <video id="stream-remote"></video>
+          <video id="stream-local" muted="muted"></video>
+          <div id="video-switch">
+            <div id="switch-text">Disable Video</div>
+            <div id="switch-background"></div>
+          </div>
+        </div>
+
+
+        <div id="multi-box">
+          <div id="status">
+            <div id="welcome" class="start"><p class="param-instructions"></p></div>
+            <div id="connecting-wrap" class="invisible"><p id="connecting">Connecting.</p></div>
+            <div id="call-status" class="invisible">
+              <p id="company" class="param-visitorname"></p>
+              <div id="timer"></div>
+            </div>
+          </div>
+
+          <div id="intro">
+            <input id="name" type="text" name="name" placeholder="Enter your full name">
+            <label id="video-check" for="video-box"><input type="checkbox" id="video-box"/><span></span> <span id="video-text">Enable video</span></label>
+          </div>
+          <div id="controls" class="hidden">
+            <label id="mute-check" for="mute-box"><input type="checkbox"
+            id="mute-box"/><span></span><span id="mute-text">Mute</span></label>
+            <div id="volume">
+              <input type="range" id="volume-slider" step="1" min="0" max="100" value="100" name="volume-slider">
+              <div id="volume-pic" class="high"></div>
+            </div>
+          </div>
+
+          <div id="dtmfButtons">
+            <div class="row">
+              <button class="dtmf" id="1"><span class="number">1</span><span>&nbsp;</span></button>
+              <button class="dtmf" id="2"><span class="number">2</span><span>ABC</span></button>
+              <button class="dtmf" id="3"><span class="number">3</span><span>DEF</span></button>
+            </div>
+            <div class="row">
+              <button class="dtmf" id="4"><span class="number">4</span><span>GHI</span></button>
+              <button class="dtmf" id="5"><span class="number">5</span><span>JKL</span></button>
+              <button class="dtmf" id="6"><span class="number">6</span><span>MNO</span></button>
+            </div>
+            <div class="row">
+              <button class="dtmf" id="7"><span class="number">7</span><span>PQRS</span></button>
+              <button class="dtmf" id="8"><span class="number">8</span><span>TUV</span></button>
+              <button class="dtmf" id="9"><span class="number">9</span><span>WXYZ</span></button>
+            </div>
+            <div class="row">
+              <button class="dtmf" id="*"><span class="star">*</span></button>
+              <button class="dtmf" id="0"><span class="number">0</span><span>OPER</span></button>
+              <button class="dtmf" id="#"><span class="pound">#</span></button>
+            </div>
+          </div>
+
+          <div class="uncollapseMargins">&nbsp;</div>
+          <button id="audio-dial-button" type="submit">Connect With Audio</button>
+          <button id="video-dial-button" type="submit">Connect With Video</button>
+          <button id="multi-button" type="submit">Connect Now</button>
+        </div>
+        <div id="bottom" class="skinny">
+          <p id="help"><a href="http://www.junctionnetworks.com/knowledgebase/onsip/admin-portal/apps/instacall/instacall-help" target="_blank">Help</a></p>
+          <a id="onsip" href="http://www.onsip.com" target="_blank">Powered by<div id="onsip-pic" class="img ir">OnSIP</div></a>
+        </div>
+        <audio id="ringback" src="wav/ringback.wav" loop></audio>
+      </div>
+    </main>
+    <footer></footer>
+    <script type="text/javascript">
+      yepnope({
+        test: !instacall.urlVars || instacall.urlVars.hasOwnProperty('preview') || instacall.urlVars.hasOwnProperty('active-preview'),
+        nope: 'js/vendor/sip-devel.js'
+      });
+    </script>
+    <script>
+      window.instacall || (window.instacall = {});
+      instacall.config || (instacall.config = {});
+      instacall.config.wsServers = ['wss://edge.sip.onsip.com'];
+      instacall.config.traceSip = true;
+      instacall.config.register = false;
+      instacall.config.uri = 'anonymous.' + Math.round(Math.random() * 1000000 - 0.5) + '@anonymous.invalid';
+      instacall.config.displayName = 'Anonymous';
+      instacall.config.instanceId = localStorage.getItem('sip:instanceId');
+      //instacall.config.target = instacall.urlVars.address;
+      instacall.config.reliable = 'supported';
+
+      instacall.theme = "flat-light";
+
+      instacall.QueryParser.update(instacall.urlVars);
+    </script>
+
+    <script type="text/javascript">
+      yepnope({
+        test: !instacall.urlVars || instacall.urlVars.hasOwnProperty('preview') || instacall.urlVars.hasOwnProperty('active-preview'),
+        nope: ['js/detect-silence.js', 'js/detect-video-freeze.js', 'js/help-overlay.js', 'js/media-stream.js', 'js/ua.js']
+      });
+    </script>
+
+    <script>
+      var _gaq = _gaq || [];
+      if (instacall.urlVars && instacall.urlVars.analyticswebpropertyid) {
+        _gaq.push(['_setAccount', instacall.urlVars.analyticswebpropertyid]);
+        _gaq.push(['_setDomainName', 'auto']);
+        _gaq.push(['_setAllowLinker', true]);
+
+        _gaq.eventCategory = 'instacall/' + instacall.urlVars.internalname;
+        _gaq.push(['_trackPageview', 'instacall/' + instacall.urlVars.internalname]);
+
+        _gaq.push(['_trackEvent', 'instacall/' + instacall.urlVars.internalname, 'ButtonClick']);
+      }
+
+      window._gaq = _gaq;
+    </script>
+    <script async src="https://ssl.google-analytics.com/ga.js"></script>
+    <!-- End Google Analytics -->
+  </body>
+</html>

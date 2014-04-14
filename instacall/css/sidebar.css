@@ -1,0 +1,39 @@
+/* line 1, /Users/will/work/web/webrtc-phone/instacall/compile/sass/sidebar.sass */
+html.ic-shift {
+  position: relative !important;
+  top: 0 !important;
+  left: 320px !important;
+  width: 100% !important;
+}
+
+/* line 7, /Users/will/work/web/webrtc-phone/instacall/compile/sass/sidebar.sass */
+#ic-frame {
+  position: absolute;
+  top: 0;
+  left: -320px;
+  width: 320px;
+  height: 100%;
+  border: none;
+  border-right: 1px solid #cccccc;
+}
+
+/* line 16, /Users/will/work/web/webrtc-phone/instacall/compile/sass/sidebar.sass */
+#ic-frame-close {
+  position: absolute;
+  top: 0;
+  left: -25px;
+  height: 20px;
+  width: 20px;
+  z-index: 1000;
+  background: url("../img/x-666666.png") no-repeat center;
+  background-size: 9px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: transparent;
+  cursor: pointer;
+}
+/* line 31, /Users/will/work/web/webrtc-phone/instacall/compile/sass/sidebar.sass */
+#ic-frame-close:hover {
+  background-image: url("../img/x-000000.png");
+}
