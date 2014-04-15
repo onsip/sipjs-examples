@@ -1,0 +1,45 @@
+html {
+  min-height: 100%;
+  min-width: 100%;
+  background: #4d5c7f;
+  font-size: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+
+#local {
+  border: 1px solid #666;
+  height: 18em;
+  width: 20em;
+  overflow: hidden;
+  margin: 0 auto;
+  background: #f3f5f8;
+}
+
+#local video {
+  height: 18em;
+  display: block;
+}
+
+#remote {
+  border: 1px solid #666;
+  height: 18em;
+  width: 20em;
+  overflow: hidden;
+  margin: 0 auto;
+  background: #f3f5f8;
+}
+
+#remote video {
+  height: 18em;
+  display: block;
+}
+
+button {
+margin: 0 auto;
+  cursor: pointer;
+  display: block;
+}
