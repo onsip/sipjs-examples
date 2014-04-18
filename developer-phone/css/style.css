@@ -29,6 +29,9 @@ ul, li {
 h1 {
     display: block;
     text-align: center;
+    width: 45%;
+    float: left;
+    padding: 0 4px;
 }
 
 body {
@@ -38,6 +41,7 @@ body {
 
 #config-form, #ua {
     float: left;
+    clear: left;
     width: 30%;
     padding-right: 15%;
     text-align: right;
