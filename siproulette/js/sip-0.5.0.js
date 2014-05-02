@@ -3390,9 +3390,6 @@ RegisterContext = function (ua) {
   // Set status
   this.registered = false;
 
-  // Save into ua instance
-  ua.registrationContext = this;
-
   this.logger = ua.getLogger('sip.registercontext');
   this.initMoreEvents(events);
 };
@@ -3627,6 +3624,7 @@ RegisterContext.prototype = {
 
 SIP.RegisterContext = RegisterContext;
 }(SIP));
+
 
 /**
  * @fileoverview MediaHandler
@@ -4025,11 +4023,7 @@ DTMF.prototype.receiveResponse = function(response) {
 
     default:
       cause = SIP.Utils.sipErrorCause(response.status_code);
-      this.emit('failed', {
-        originator: 'remote',
-        response: response,
-        cause: cause
-      });
+      this.emit('failed', response, cause);
       break;
   }
 };
@@ -4038,10 +4032,7 @@ DTMF.prototype.receiveResponse = function(response) {
  * @private
  */
 DTMF.prototype.onRequestTimeout = function() {
-  this.emit('failed', {
-    originator: 'system',
-    cause: SIP.C.causes.REQUEST_TIMEOUT
-  });
+  this.emit('failed', null, SIP.C.causes.REQUEST_TIMEOUT);
   this.owner.onRequestTimeout();
 };
 
@@ -4049,10 +4040,7 @@ DTMF.prototype.onRequestTimeout = function() {
  * @private
  */
 DTMF.prototype.onTransportError = function() {
-  this.emit('failed', {
-    originator: 'system',
-    cause: SIP.C.causes.CONNECTION_ERROR
-  });
+  this.emit('failed', null, SIP.C.causes.CONNECTION_ERROR);
   this.owner.onTransportError();
 };
 
@@ -4060,11 +4048,7 @@ DTMF.prototype.onTransportError = function() {
  * @private
  */
 DTMF.prototype.onDialogError = function(response) {
-  this.emit('failed', {
-    originator: 'remote',
-    response: response,
-    cause: SIP.C.causes.DIALOG_ERROR
-  });
+  this.emit('failed', response, SIP.C.causes.DIALOG_ERROR);
   this.owner.onDialogError(response);
 };
 
@@ -4802,8 +4786,7 @@ Session.prototype = {
           if (hasReferListener) {
             this.emit('refer', request.parseHeader('refer-to').uri, request);
           } else if (hasReferredListener) {
-            // HACK:close mediaHandler (and mediaStream) so Chrome doesn't get confused about gUM
-            this.mediaHandler.close();
+            SIP.Hacks.Chrome.getsConfusedAboutGUM(this);
 
             /*
               Harmless race condition.  Both sides of REFER
@@ -5007,14 +4990,8 @@ Session.prototype = {
   },
 
   failed: function(response, cause) {
-    var code = response ? response.status_code : null;
-
     this.close();
-    return this.emit('failed', {
-      response: response || null,
-      cause: cause,
-      code: code
-    });
+    return this.emit('failed', response, cause);
   },
 
   rejected: function(response, cause) {
@@ -5085,11 +5062,8 @@ InviteServerContext = function(ua, request) {
   }
 
   //TODO: move this into media handler
-  if (request.body && window.mozRTCPeerConnection !== undefined) {
-    request.body = request.body.
-      replace(/relay/g,"host generation 0").
-      replace(/ \r\n/g, "\r\n");
-  }
+  SIP.Hacks.Firefox.cannotHandleRelayCandidates(request);
+  SIP.Hacks.Firefox.cannotHandleExtraWhitespace(request);
 
   SIP.Utils.augment(this, SIP.ServerContext, [ua, request]);
   SIP.Utils.augment(this, SIP.Session, [ua.configuration.mediaHandlerFactory]);
@@ -5553,6 +5527,9 @@ InviteServerContext.prototype = {
         if (!this.hasAnswer) {
           if(request.body && request.getHeader('content-type') === 'application/sdp') {
             // ACK contains answer to an INVITE w/o SDP negotiation
+            SIP.Hacks.Firefox.cannotHandleRelayCandidates(request);
+            SIP.Hacks.Firefox.cannotHandleExtraWhitespace(request);
+
             this.hasAnswer = true;
             this.mediaHandler.setDescription(
               request.body,
@@ -5918,10 +5895,8 @@ InviteClientContext.prototype = {
             return;
           }
 
-          if (response.body && window.mozRTCPeerConnection !== undefined) {
-            response.body = response.body.replace(/relay/g, 'host generation 0');
-            response.body = response.body.replace(/ \r\n/g, '\r\n');
-          }
+          SIP.Hacks.Firefox.cannotHandleRelayCandidates(response);
+          SIP.Hacks.Firefox.cannotHandleExtraWhitespace(response);
 
           if (!response.body) {
             extraHeaders.push('RAck: ' + response.getHeader('rseq') + ' ' + response.getHeader('cseq'));
@@ -6046,10 +6021,8 @@ InviteClientContext.prototype = {
           break;
         }
 
-        if (response.body && window.mozRTCPeerConnection !== undefined) {
-          response.body = response.body.replace(/relay/g, 'host generation 0');
-          response.body = response.body.replace(/ \r\n/g, '\r\n');
-        }
+        SIP.Hacks.Firefox.cannotHandleRelayCandidates(response);
+        SIP.Hacks.Firefox.cannotHandleExtraWhitespace(response);
 
         // This is an invite without sdp
         if (!this.hasOffer) {
@@ -6093,35 +6066,8 @@ InviteClientContext.prototype = {
                     if(session.isCanceled || session.status === C.STATUS_TERMINATED) {
                       return;
                     }
-                    /*
-                     * This is a Firefox hack to insert valid sdp when getDescription is
-                     * called with the constraint offerToReceiveVideo = false.
-                     * We search for either a c-line at the top of the sdp above all
-                     * m-lines. If that does not exist then we search for a c-line
-                     * beneath each m-line. If it is missing a c-line, we insert
-                     * a fake c-line with the ip address 0.0.0.0. This is then valid
-                     * sdp and no media will be sent for that m-line.
-                     *
-                     * Valid SDP is:
-                     * m=
-                     * i=
-                     * c=
-                     */
-                    if (sdp.indexOf('c=') > sdp.indexOf('m=')) {
-                      var insertAt;
-                      var mlines = (sdp.match(/m=.*\r\n.*/g));
-                      for (var i=0; i<mlines.length; i++) {
-                        if (mlines[i].toString().search(/i=.*/) >= 0) {
-                          insertAt = sdp.indexOf(mlines[i].toString())+mlines[i].toString().length;
-                          if (sdp.substr(insertAt,2)!=='c=') {
-                            sdp = sdp.substr(0,insertAt) + '\r\nc=IN IP 4 0.0.0.0' + sdp.substr(insertAt);
-                          }
-                        } else if (mlines[i].toString().search(/c=.*/) < 0) {
-                          insertAt = sdp.indexOf(mlines[i].toString().match(/.*/))+mlines[i].toString().match(/.*/).toString().length;
-                          sdp = sdp.substr(0,insertAt) + '\r\nc=IN IP4 0.0.0.0' + sdp.substr(insertAt);
-                        }
-                      }
-                    }
+
+                    sdp = SIP.Hacks.Firefox.hasMissingCLineInSDP(sdp);
 
                     session.status = C.STATUS_CONFIRMED;
                     session.hasAnswer = true;
@@ -6535,14 +6481,8 @@ SIP.Subscription.prototype = {
   },
 
   failed: function(response, cause) {
-    var code = response ? response.status_code : null;
-
     this.close();
-    return this.emit('failed', {
-      response: response || null,
-      cause: cause,
-      code: code
-    });
+    return this.emit('failed', response, cause);
   },
 
   /**
@@ -6914,14 +6854,9 @@ MediaHandler.prototype = {
     var self = this;
 
     function readySuccess () {
-      var sub, index, sdp = self.peerConnection.localDescription.sdp;
+      var sdp = self.peerConnection.localDescription.sdp;
 
-      if (window.mozRTCPeerConnection !== undefined && sdp.indexOf('m=video 0') !== -1) {
-        index = sdp.indexOf('m=video 0');
-        sub = sdp.substr(index);
-        sub = sub.replace(/\r\nc=IN IP4.*\r\n$/,'\r\nc=IN IP4 0.0.0.0\r\na=inactive\r\n');
-        sdp = sdp.substr(0, index) + sub;
-      }
+      sdp = SIP.Hacks.Chrome.needsExplicitlyInactiveSDP(sdp);
 
       self.ready = true;
       onSuccess(sdp);
@@ -9013,6 +8948,106 @@ Utils= {
 };
 
 SIP.Utils = Utils;
+}(SIP));
+
+
+/**
+ * @fileoverview Hacks - This file contains all of the things we
+ * wish we didn't have to do, just for interop.  It is similar to
+ * Utils, which provides actually useful and relevant functions for
+ * a SIP library. Methods in this file are grouped by vendor, so
+ * as to most easily track when particular hacks may not be necessary anymore.
+ */
+
+(function (SIP) {
+
+var Hacks;
+
+Hacks = {
+
+  Firefox: {
+    /* Condition to detect if hacks are applicable */
+    isFirefox: function () {
+      return window.mozRTCPeerConnection !== undefined;
+    },
+
+    cannotHandleRelayCandidates: function (message) {
+      if (this.isFirefox() && message.body) {
+        message.body = message.body.replace(/relay/g, 'host generation 0');
+      }
+    },
+
+    cannotHandleExtraWhitespace: function (message) {
+      if (this.isFirefox() && message.body) {
+        message.body = message.body.replace(/ \r\n/g, "\r\n");
+      }
+    },
+
+    hasMissingCLineInSDP: function (sdp) {
+      /*
+       * This is a Firefox hack to insert valid sdp when getDescription is
+       * called with the constraint offerToReceiveVideo = false.
+       * We search for either a c-line at the top of the sdp above all
+       * m-lines. If that does not exist then we search for a c-line
+       * beneath each m-line. If it is missing a c-line, we insert
+       * a fake c-line with the ip address 0.0.0.0. This is then valid
+       * sdp and no media will be sent for that m-line.
+       *
+       * Valid SDP is:
+       * m=
+       * i=
+       * c=
+       */
+      var insertAt, mlines;
+      if (sdp.indexOf('c=') > sdp.indexOf('m=')) {
+
+        // Find all m= lines
+        mlines = sdp.match(/m=.*\r\n.*/g);
+        for (var i=0; i<mlines.length; i++) {
+
+          // If it has an i= line, check if the next line is the c= line
+          if (mlines[i].toString().search(/i=.*/) >= 0) {
+            insertAt = sdp.indexOf(mlines[i].toString())+mlines[i].toString().length;
+            if (sdp.substr(insertAt,2)!=='c=') {
+              sdp = sdp.substr(0,insertAt) + '\r\nc=IN IP 4 0.0.0.0' + sdp.substr(insertAt);
+            }
+
+          // else add the C line if it's missing
+          } else if (mlines[i].toString().search(/c=.*/) < 0) {
+            insertAt = sdp.indexOf(mlines[i].toString().match(/.*/))+mlines[i].toString().match(/.*/).toString().length;
+            sdp = sdp.substr(0,insertAt) + '\r\nc=IN IP4 0.0.0.0' + sdp.substr(insertAt);
+          }
+        }
+      }
+      return sdp;
+    }
+  },
+
+  Chrome: {
+    needsExplicitlyInactiveSDP: function (sdp) {
+      var sub, index;
+      if (Hacks.Firefox.isFirefox()) { // Fix this in Firefox before sending
+        index = sdp.indexOf('m=video 0');
+        if (index !== -1) {
+          sub = sdp.substr(index);
+          sub = sub.replace(/\r\nc=IN IP4.*\r\n$/,
+                            '\r\nc=IN IP4 0.0.0.0\r\na=inactive\r\n');
+          return sdp.substr(0, index) + sub;
+        }
+      }
+      return sdp;
+    },
+
+    getsConfusedAboutGUM: function (session) {
+      if (session.mediaHandler) {
+        session.mediaHandler.close();
+      }
+    }
+  }
+};
+
+
+SIP.Hacks = Hacks;
 }(SIP));
 
 
