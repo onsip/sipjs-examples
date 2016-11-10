@@ -276,7 +276,7 @@ window.instacall || (window.instacall = {});
         callback();
       }.bind(this);
 
-      xhr.open('GET', 'https://www.jnctn.com/webapi?Action=NoOp&Output=json', true);
+      xhr.open('GET', 'https://www.jnctn.com/api?Action=NoOp&Output=json', true);
       xhr.send();
     },
 
